@@ -1,0 +1,33 @@
+<div class="row text-center">
+  <div class="col-sm-12 p-0">
+    <div class="card m-2">
+      <div class="card-header">Attention</div>
+      <div class="card-body">
+        <h5 class="card-title">Welcome</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <button class="btn btn-primary" disabled>See transactions</button>
+      </div>
+      <div class="card-footer">
+        You have {{transactionsTotal}} transactions
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 p-0" *ngFor="let card of cards">
+    <div class="card m-2">
+      <div class="card-body">
+        <h5 class="card-title">{{card.number}}</h5>
+        <p class="card-text">{{card.type}}</p>
+        <div class="text-right">
+          <button class="btn btn-primary"
+                  [routerLink]="['/navigator']"
+                  [queryParams]="{tab: card.typeId}">
+            See all
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item" *ngFor="let type of types">
+    <a class="nav-link"
+       routerLinkActive="active"
+       [routerLink]="['/navigator']"
+       [queryParams]="{ tab: type.id }">
+      {{type.name}}
+    </a>
+  </li>
+</ul>
+
+<table class="table table-sm mt-3 text-center">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of tabList">
+      <td>{{person.name}}</td>
+      <td>{{person.company}}</td>
+    </tr>
+  </tbody>
+</table>
