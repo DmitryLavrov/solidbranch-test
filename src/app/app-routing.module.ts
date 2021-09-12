@@ -8,10 +8,10 @@ const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
       {path: '', component: SummaryComponent},
-      {path: 'navigator', component: ListComponent},
-      {path: '**', redirectTo: ''}
+      {path: 'navigator', component: ListComponent}
     ]
-  }
+  },
+  {path: '**', redirectTo: ''}
 ]
 
 @NgModule({
